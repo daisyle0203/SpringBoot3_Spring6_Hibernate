@@ -29,6 +29,7 @@ public class DemoController {
 
     @GetMapping("/check")
     public String check() {
+        // should return false since they are not the same beans
         return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
     }
 }
