@@ -8,11 +8,11 @@ public class Student {
 
     // define fields
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment
     @Column(name="id")
     private int id;
 
-    @Column(name="first_name")
+    @Column(name="first_name") // make sure to match the name in the database
     private String firstName;
 
     @Column(name="last_name")
