@@ -39,10 +39,16 @@ public class StudentDAOImpl implements StudentDAO {
         // create query
         // Noted: Student is not database table name, it is a JPA entity class name
         // All JPQL syntax is based on entity name and entity fields
-        TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student order by lastName", Student.class);
+        TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student", Student.class);
 
         // return query result
         return theQuery.getResultList();
+    }
+
+    @Override
+    @Transactional
+    public void update(Student theStudent) {
+        entityManager.merge(theStudent);
     }
 
 }
